@@ -10,6 +10,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { EmptyRouteComponent } from './app/empty-route/empty-route.component';
+import { provideHttpClient } from '@angular/common/http';
 
 if (environment.production) {
   enableProdMode();
@@ -22,6 +23,7 @@ const lifecycles = singleSpaAngular({
       providers: [
         getSingleSpaExtraProviders(),
         provideRouter([{ path: '**', component: EmptyRouteComponent }]),
+        provideHttpClient(),
         { provide: APP_BASE_HREF, useValue: '/' },
       ],
     });

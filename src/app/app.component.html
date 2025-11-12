@@ -1,1 +1,8 @@
-Hola desde el pokedex
+<input type="text" [(ngModel)]="pokemonName">
+<button type="button" (click)="getPokemonData()">Extrar detos</button>
+<div>
+	<img [src]="data.sprites.front_default" alt="" style="display: inline-block;vertical-align: middle;">
+	<div *ngIf="data != null" style="display: inline-block;vertical-align: middle;">
+		{{data.forms[0].name}}
+	</div>
+</div>
